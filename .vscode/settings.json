@@ -1,0 +1,16 @@
+{
+    "zephyr": {
+        "project":"${userHome}/zephyrproject",
+        "sdk":"${userHome}/zephyr-sdk-0.16.5",
+    },
+    "bsp": {
+        "board": "art_pi_h750",
+        "boardPath":"${workspaceFolder}/stm32",
+        "openocdCfg": "${config:bsp.boardPath}/${config:bsp.board}/support/openocd.cfg",
+    },
+      "app": {
+        "name": "${workspaceFolderBasename}",
+        "build_dir": "${workspaceFolder}/build/${config:bsp.board}",
+    },
+    "cortex-debug.gdbPath": "${config:zephyr.sdk}/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+}

@@ -1,0 +1,52 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "group": "build",
+      "options": {"cwd": "${workspaceFolder}/app"},
+      "command":"source ${config:zephyr.project}/.venv/bin/activate;west build -p always --sysbuild -d ${config:app.build_dir} -b ${config:bsp.board}",
+      "presentation": {
+        "focus": true,
+        "group": "env",
+        "panel": "shared"
+      },
+      "problemMatcher": [ "$gcc" ]
+    },
+     {
+      "label": "Rebuild",
+      "type": "shell",
+      "group": "build",
+      "options": {"cwd": "${workspaceFolder}/app"},
+      "command":"source ${config:zephyr.project}/.venv/bin/activate;west build -p always -d ${config:app.build_dir} -b ${config:bsp.board}",
+      "presentation": {
+        "focus": true,
+        "group": "env",
+        "panel": "shared"
+      },
+      "dependsOrder": "sequence",
+      // "dependsOn": ["Clean"],
+      "problemMatcher": [ "$gcc" ]
+     },
+     {
+      "label": "Clean",
+      "type": "shell",
+      "group": "build",
+      "command": "source ${config:zephyr.project}/.venv/bin/activate;west build -t pristine -d ${config:app.build_dir}",
+      "presentation": {
+        "focus": true,
+        "group": "env",
+        "panel": "shared"
+      },
+     },
+     {
+      "label": "Flash",
+      "type": "shell",
+      "group": "build",
+      "command": "source ${config:zephyr.project}/.venv/bin/activate;west flash -d ${config:app.build_dir}",
+      "dependsOn": [],
+      "problemMatcher": []
+     },
+    ]
+   }

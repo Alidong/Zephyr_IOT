@@ -1,0 +1,26 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "cwd": "${workspaceFolder}",
+            "executable": "${config:app.build_dir}/zephyr/zephyr.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "pyocd",
+            "interface": "swd",
+            // "device": "STM32",
+            "targetId":"stm32h750xbhx",
+            "configFiles": [
+                // "${config:bsp.boardPath}/${config:bsp.board}/support/openocd.cfg"
+                "${config:bsp.openocdCfg}"
+            ],
+            // "armToolchainPath": "${config:zephyr.sdk}/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb"
+            // "preLaunchTask": "Build"
+        }
+    ]
+}
