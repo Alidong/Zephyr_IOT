@@ -12,9 +12,10 @@ LOG_MODULE_REGISTER(main, CONFIG_APP_LOG_LEVEL);
 
 int main(void)
 {
+	printk("Address of sample %p\n", (void *)__rom_region_start);
+	printk("Hello sysbuild with mcuboot! %s\n", CONFIG_BOARD);
 	int ret;
 	const struct device *sensor;
-
 	printk("Zephyr Example Application %s\n", APP_VERSION_STRING);
 
 	sensor = DEVICE_DT_GET(DT_NODELABEL(examplesensor0));
@@ -40,7 +41,7 @@ int main(void)
 
 		printk("Sensor value: %d\n", val.val1);
 
-		k_sleep(K_MSEC(1000));
+		k_sleep(K_MSEC(100));
 	}
 
 	return 0;
