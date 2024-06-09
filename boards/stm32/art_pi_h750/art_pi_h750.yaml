@@ -1,0 +1,14 @@
+identifier: art_pi_h750
+name: RT-Thread ART-Pi
+type: mcu
+arch: arm
+socs:
+    - name: stm32h750xb
+    
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+ram: 1024
+flash: 128
+vendor: others

@@ -1,0 +1,5 @@
+board:
+  name: art_pi_h750
+  vendor: rt-thread
+  socs:
+    - name: stm32h750xx

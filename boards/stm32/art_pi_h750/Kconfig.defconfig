@@ -1,0 +1,9 @@
+# Copyright (c) 2022 Brian Bradley
+# SPDX-License-Identifier: Apache-2.0
+
+# ART-Pi H750 board definitions
+
+if BOARD_ART_PI_H750
+# Enable the internal SMPS regulator
+
+endif # BOARD_ART_PI_H750
